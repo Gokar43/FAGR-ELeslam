@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مركز فجر الإسلام لخدمات الموبايل</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0 10px;
+      color: #222;
+    }
+    header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .working-hours {
+      margin: 20px 0;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ddd;
+      font-size: 18px;
+      text-align: center;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ddd;
+      max-width: 500px;
+      margin: auto;
+    }
+    form h2 {
+      margin-top: 0;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0d6efd;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #094bb5;
+    }
+    .confirmation {
+      max-width: 500px;
+      margin: 20px auto;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo Png (1) (1).png" alt="شعار مركز فجر الإسلام" />
+    <h1>مركز فجر الإسلام لخدمات الموبايل</h1>
+  </header>
+
+  <div class="working-hours">
+    مواعيد العمل: 11 ظهراً إلى 12 ليلاً
+  </div>
+
+  <form id="bookingForm">
+    <h2>احجز الآن</h2>
+
+    <label for="clientName">اسم العميل</label>
+    <input type="text" id="clientName" name="clientName" required />
+
+    <label for="phoneNumber">رقم الهاتف</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]+" />
+
+    <label for="phoneType">نوع الموبايل</label>
+    <select id="phoneType" name="phoneType" required>
+      <option value="">اختر نوع الموبايل</option>
+      <option value="أندرويد">أندرويد</option>
+      <option value="آيفون">آيفون</option>
+      <option value="آخر">آخر</option>
+    </select>
+
+    <label for="problemDesc">وصف المشكلة</label>
+    <textarea id="problemDesc" name="problemDesc" required></textarea>
+
+    <button type="submit">إرسال الحجز</button>
+  </form>
+
+  <div class="confirmation" id="confirmationMsg">
+    شكراً لحجزك! سنتواصل معك قريباً.
+  </div>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    const confirmationMsg = document.getElementById('confirmationMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // هنا ممكن تضيف إرسال البيانات لخادم لو عندك API
+      // حالياً هيظهر رسالة تأكيد فقط
+      
+      form.style.display = 'none';
+      confirmationMsg.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
